@@ -1,0 +1,40 @@
+name: deepfield
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # --- 核心语言环境 ---
+  - python=3.11
+
+  # --- Web Framework (FastAPI) ---
+  - fastapi
+  - uvicorn-standard  # 包含 uvloop 等高性能组件
+  - pydantic
+  - pydantic-settings
+  - python-multipart  # 文件上传支持
+
+  # --- Database (Async SQLAlchemy + Postgres) ---
+  - sqlalchemy
+  - asyncpg           # 极其高效的 Postgres 异步驱动
+  - alembic           # 数据库迁移
+  - greenlet          # SQLAlchemy 异步依赖
+
+  # --- Astronomy & Science (核心计算库) ---
+  - skyfield          # 天文计算
+  - astropy           # 专业天文库
+  - numpy
+  - pandas
+  - pytz              # 时区处理
+
+  # --- Graph Logic (图算法) ---
+  - networkx
+
+  # --- Utilities ---
+  - python-dotenv     # 环境变量管理
+  - httpx             # 异步 HTTP 请求
+  - black             # 代码格式化
+  - pytest            # 测试框架
+  
+  # 如果有些包在 conda 里找不到，可以在这里通过 pip 安装
+  # - pip:
+  #   - some-package-only-on-pypi
